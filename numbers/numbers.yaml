@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: numbers
+  labels:
+    app: numbers
+spec:
+  selector:
+    matchLabels:
+      app: numbers
+  template:
+    metadata:
+      labels:
+        app: numbers
+        tier: web
+    spec:
+      containers:
+      - name: numbers
+        image: random_number/numbers
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            cpu: "10m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: numbers
+  labels:
+    app: numbers
+spec:
+  ports:
+    - port: 80
+      targetPort: 5000
+      protocol: TCP
+  selector:
+    app: numbers

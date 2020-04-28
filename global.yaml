@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: some-secret
+type: Opaque
+data:
+  stuff: aGVsbG8gd29ybGQ=
+  things: bXktZm9ydHVuZS1zZWNyZXQ=
