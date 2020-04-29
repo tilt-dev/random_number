@@ -3,6 +3,7 @@
 <head>
   <title>Random Number (Tilt Demo)</title>
   <link href="https://fonts.googleapis.com/css?family=Lora:700|Varela+Round" rel="stylesheet">
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">
 </head>
 <style>
   /* CSS Variables */
