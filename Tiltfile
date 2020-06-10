@@ -31,8 +31,8 @@ k8s_resource('numbers', port_forwards='8001')
 docker_build_with_restart('random_number/fe', 'fe',  # ≈ docker build -t random_number/fe ./fe
     entrypoint='/go/bin/fe',  # command to run on container start/re-run on live update
     live_update=[
-        sync('./fe', '/go/src/github.com/windmilleng/random_number/fe'),
-        run('go install github.com/windmilleng/random_number/fe'),
+        sync('./fe', '/go/src/github.com/tilt-dev/random_number/fe'),
+        run('go install github.com/tilt-dev/random_number/fe'),
     ])
 
 # Service: numbers
