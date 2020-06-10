@@ -17,8 +17,6 @@ const (
 	svcNumbers = "numbers"
 )
 
-var serviceOwner = flag.String("owner", "", "If specified, look for hostnames "+
-	"prefixed with this label")
 var numbersHost = flag.String("numbers-host", svcNumbers, "The host for the numbers service")
 var port = flag.Int("port", 8080, "The port on which to serve http")
 
@@ -85,9 +83,6 @@ func getNumber() (int, error) {
 
 func pingPortForService(host string) ([]byte, error) {
 	url := fmt.Sprintf("http://%s", host)
-	if *serviceOwner != "" {
-		url = fmt.Sprintf("http://%s-%s", *serviceOwner, host)
-	}
 	resp, err := http.Get(url)
 
 	if err != nil {
